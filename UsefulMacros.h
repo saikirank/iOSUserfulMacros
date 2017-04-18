@@ -19,7 +19,7 @@
  * @param ... : first argument will be the format and consequitive arguments will follow the values to form string with.
  */
 #ifdef DEBUG
-#define DEBUGLog(...) extendedLog( [NSString stringWithFormat:@"%@ (Line %d): ", NSStringFromClass([self class]), __LINE__], __VA_ARGS__ )
+#define DEBUGLog(fmt, ...) NSLog(fmt, ## __VA_ARGS__)
 #else
 #define DEBUGLog(...) (void)0
 #endif
